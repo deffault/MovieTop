@@ -3,6 +3,7 @@ package com.example.movietop.di
 import com.example.movietop.data.movies.MoviesListApi
 import dagger.Module
 import dagger.Provides
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -17,6 +18,13 @@ class NetworkModule {
         return Retrofit.Builder()
             .baseUrl("https://kinopoiskapiunofficial.tech/")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(OkHttpClient.Builder()
+                .addNetworkInterceptor { chain ->
+                    val request = chain.request()
+                    val newRequest = request.newBuilder().addHeader("X-API-KEY", "").build()
+                    chain.proceed(newRequest)
+                }
+                .build())
             .build()
     }
 
