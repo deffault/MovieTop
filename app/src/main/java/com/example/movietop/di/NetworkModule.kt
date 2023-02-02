@@ -1,6 +1,7 @@
 package com.example.movietop.di
 
-import com.example.movietop.data.movies.MoviesListApi
+import com.example.movietop.data.movies.details.MovieDetailsApi
+import com.example.movietop.data.movies.list.MoviesListApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -31,6 +32,12 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideMoviesListApi(retrofit: Retrofit): MoviesListApi {
+        return retrofit.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideMovieDetailApi(retrofit: Retrofit): MovieDetailsApi {
         return retrofit.create()
     }
 }
