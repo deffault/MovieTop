@@ -1,18 +1,16 @@
-package com.example.movietop.data.movies
+package com.example.movietop.data.movies.list
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.movietop.domain.movies.Film
-import com.example.movietop.domain.movies.MoviesRepository
-import com.example.movietop.utils.providers.dispatchers.DispatcherProvider
+import com.example.movietop.domain.movies.list.MoviesListRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class MoviesRepositoryImpl @Inject constructor(
+class MoviesListRepositoryImpl @Inject constructor(
     private val api: MoviesListApi,
-) : MoviesRepository {
+) : MoviesListRepository {
     override fun getPagedMovies(): Flow<PagingData<Film>> {
         return Pager(
             config = PagingConfig(

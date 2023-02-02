@@ -1,4 +1,4 @@
-package com.example.movietop.data.movies
+package com.example.movietop.data.movies.list
 
 import retrofit2.http.GET
 import retrofit2.http.Query

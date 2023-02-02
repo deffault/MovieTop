@@ -1,6 +1,6 @@
 package com.example.movietop.utils
 
-import com.example.movietop.data.movies.FilmDTO
+import com.example.movietop.data.movies.list.FilmDTO
 import com.example.movietop.domain.movies.Film
 
 fun FilmDTO.toFilm() = Film(
