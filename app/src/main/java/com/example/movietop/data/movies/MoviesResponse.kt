@@ -17,6 +17,9 @@ data class FilmDTO(
     @SerializedName("nameRu")
     val name: String,
 
+    @SerializedName("year")
+    val year: String,
+
     @SerializedName("rating")
     val rating: String,
 
