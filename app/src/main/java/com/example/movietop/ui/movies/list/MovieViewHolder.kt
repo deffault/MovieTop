@@ -3,7 +3,7 @@ package com.example.movietop.ui.movies.list
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.example.movietop.databinding.ItemMovieBinding
-import com.example.movietop.domain.movies.Film
+import com.example.movietop.domain.movies.list.Film
 
 class MovieViewHolder(
     private val binding: ItemMovieBinding

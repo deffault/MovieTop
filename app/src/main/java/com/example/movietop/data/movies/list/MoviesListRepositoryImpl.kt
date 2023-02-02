@@ -3,7 +3,7 @@ package com.example.movietop.data.movies.list
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.movietop.domain.movies.Film
+import com.example.movietop.domain.movies.list.Film
 import com.example.movietop.domain.movies.list.MoviesListRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

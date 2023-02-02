@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.example.movietop.databinding.ItemMovieBinding
-import com.example.movietop.domain.movies.Film
+import com.example.movietop.domain.movies.list.Film
 
 class MoviesListAdapter : PagingDataAdapter<Film, MovieViewHolder>(DiffUtilsCallback()) {
     // 20 фильмов на страницу

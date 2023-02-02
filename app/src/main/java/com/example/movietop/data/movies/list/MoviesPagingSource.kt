@@ -2,7 +2,7 @@ package com.example.movietop.data.movies.list
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.movietop.domain.movies.Film
+import com.example.movietop.domain.movies.list.Film
 import com.example.movietop.utils.toFilm
 
 class MoviesPagingSource(

@@ -1,4 +1,4 @@
-package com.example.movietop.domain.movies
+package com.example.movietop.domain.movies.list
 
 data class Film(
     val id: Int,
