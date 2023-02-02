@@ -8,6 +8,5 @@ fun FilmDTO.toFilm() = Film(
     name = name,
     year = year,
     rating = rating,
-    posterUrl = posterUrl,
     posterUrlPreview = posterUrlPreview
 )

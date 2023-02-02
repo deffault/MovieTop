@@ -5,6 +5,5 @@ data class Film(
     val name: String,
     val year: String,
     val rating: String,
-    val posterUrl: String,
     val posterUrlPreview: String
 )

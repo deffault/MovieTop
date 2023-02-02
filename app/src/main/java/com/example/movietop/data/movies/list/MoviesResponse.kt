@@ -23,9 +23,6 @@ data class FilmDTO(
     @SerializedName("rating")
     val rating: String,
 
-    @SerializedName("posterUrl")
-    val posterUrl: String,
-
     @SerializedName("posterUrlPreview")
     val posterUrlPreview: String
 )
