@@ -3,8 +3,8 @@ package com.example.movietop.data.movies.details
 import com.example.movietop.domain.movies.details.MovieDetails
 import com.example.movietop.domain.movies.details.MovieDetailsRepository
 import com.example.movietop.utils.Resource
+import com.example.movietop.utils.mappers.toMovieDetails
 import com.example.movietop.utils.providers.dispatchers.DispatcherProvider
-import com.example.movietop.utils.toMovieDetails
 import kotlinx.coroutines.withContext
 import okio.IOException
 import retrofit2.HttpException

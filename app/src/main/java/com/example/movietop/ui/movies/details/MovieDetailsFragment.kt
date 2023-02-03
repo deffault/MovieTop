@@ -1,8 +1,13 @@
 package com.example.movietop.ui.movies.details
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -30,6 +35,7 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         context.appComponent.inject(this)
+        requireActivity().window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +46,11 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
         arguments?.getInt(ARG_MOVIE_ID)?.let { id ->
             detailsViewModel.loadDetails(movieId = id)
         } ?: run { showErrorSnackBar(R.string.can_not_show_details) }
+    }
+
+    override fun onDetach() {
+        requireActivity().window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        super.onDetach()
     }
 
     private fun collectDetailsFlow() {
@@ -65,9 +76,17 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
     private fun showDetails(details: MovieDetails) {
         with(binding) {
             ivCover.load(details.coverUrl)
+
             ivPoster.load(details.posterUrlPreview)
+            tvYearValue.text = details.year
+            tvLength.text = details.filmLength
+            tvGenres.text = details.genres
+
+            rating.pbRating.progress = details.ratingForProgress
+            rating.tvRatingValue.text = details.ratingForText
 
             tvDescription.text = details.description
+            tvName.text = details.name
         }
     }
 

@@ -4,10 +4,11 @@ data class MovieDetails(
     val coverUrl: String,
     val posterUrlPreview: String,
     val name: String,
-    val rating: Float,
+    val ratingForProgress: Int,
+    val ratingForText: String,
     val year: String,
-    val filmLength: Int,
-    val genres: List<Genre>,
+    val filmLength: String,
+    val genres: String,
     val description: String
 )
 
