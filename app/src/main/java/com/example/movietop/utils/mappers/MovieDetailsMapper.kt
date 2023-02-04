@@ -28,7 +28,6 @@ private fun calcLength(length: Int): String {
 }
 
 private fun setRating(rating: Float): Int {
-    println("VVVV ${rating}")
     return (rating * 10).toInt()
 }
 
