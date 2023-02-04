@@ -5,4 +5,5 @@
     <string name="overview">Описание</string>
     <string name="can_not_show_details">Не удалось отобразить информацию о фильме</string>
     <string name="released_year">Год выхода</string>
+    <string name="actor_poster">actor_poster</string>
 </resources>
