@@ -1,5 +1,6 @@
 package com.example.movietop.di
 
+import com.example.movietop.BuildConfig
 import com.example.movietop.data.movies.details.MovieDetailsApi
 import com.example.movietop.data.movies.list.MoviesListApi
 import dagger.Module
@@ -22,7 +23,7 @@ class NetworkModule {
             .client(OkHttpClient.Builder()
                 .addNetworkInterceptor { chain ->
                     val request = chain.request()
-                    val newRequest = request.newBuilder().addHeader("X-API-KEY", "").build()
+                    val newRequest = request.newBuilder().addHeader("X-API-KEY", BuildConfig.API_KEY).build()
                     chain.proceed(newRequest)
                 }
                 .build())
